@@ -1,4 +1,4 @@
-FROM alpine:latest
+FROM filebrowser/filebrowser:latest
 RUN apk --update add ca-certificates \
                      mailcap \
                      curl
@@ -10,6 +10,5 @@ VOLUME /srv
 
 
 COPY .docker.json /.filebrowser.json
-COPY filebrowser /filebrowser
 
 ENTRYPOINT [ "/filebrowser" ]
